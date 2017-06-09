@@ -38,6 +38,21 @@ app.use(function (req, res, next) {
 // Server=tcp:firerock.database.windows.net,1433;
 //Initial Catalog=CabBooking;Persist Security Info=False;User ID={your_username};Password={your_password};
 //MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
+// var config = {
+//     user: 'sa',
+//     password: 'password_123',
+//     server: 'localhost',
+//     database: 'cabbooking',
+//     dialect: "mssql",
+//     options: {
+//         truestedConnection: true,
+//         encrypt: true // Use this if you're on Windows Azure
+//     },
+
+// };
+
+
 var config = {
     user: 'satyams',
     password: 'Citiustech@1234',
