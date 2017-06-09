@@ -171,7 +171,8 @@ app.get("/bookingList", function (req, res) {
     });
 });
 
-var server = app.listen(5000, function () {
+var portNumber = process.env.port || process.env.PORT || 1337
+var server = app.listen(portNumber, function () {
 
-    console.log('Server is running..');
+     console.log('Server listening at port %d', portNumber);
 });
