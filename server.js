@@ -108,19 +108,32 @@ app.use(bodyParser.json());
 // });
 
 
+// var config = {
+//     user: 'sa',
+//     password: 'password_123',
+//     server: 'localhost',
+//     database: 'cabbooking',
+//     dialect: "mssql",
+//     options: {
+//         truestedConnection: true,
+//         encrypt: true // Use this if you're on Windows Azure
+//     },
+
+// };
 var config = {
-    user: 'sa',
-    password: 'password_123',
-    server: 'localhost',
+    user: 'satyams',
+    password: 'Citiustech@1234',
+    server: 'tcp:firerock.database.windows.net,1433',
     database: 'cabbooking',
     dialect: "mssql",
     options: {
         truestedConnection: true,
         encrypt: true // Use this if you're on Windows Azure
     },
-
+    // dialectOptions: {
+    //     instanceName: "SQLEXPRESS"
+    // }
 };
-
 
 // var config = {
 //     user: 'satyams',
