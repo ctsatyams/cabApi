@@ -3,30 +3,42 @@
   "version": "1.0.0",
   "description": "Rest service for cab booking mobile app",
   "main": "server.js",
-   "private": true,
-   
+  "private": true,
   "scripts": {
-     "start": "node ./bin/www",
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-    "engines": {
-  "node": "5.9.1",
-"npm": "3.7.3"
+  "engines": {
+    "node": "5.9.1",
+    "npm": "3.7.3"
   },
   "author": "satyam",
   "license": "ISC",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
     "brunch": "^2.10.9",
+    "connect-flash": "^0.1.1",
     "express": "^4.15.3",
     "mssql": "^4.0.4",
-    "tedious": "^2.0.0"
+    "passport": "^0.3.2",
+   
+    "tedious": "^2.0.0",
+
+     "ejs": ">= 0.0.0",
+    "ejs-locals": ">= 0.0.0",
+    "restify": "~4.0.4",
+    "mongoose": "~4.4.12",
+    "bunyan": "~1.8.0",
+    "assert-plus": "~1.0.0",
+    "passport-azure-ad": "~1.4.5",
+   
   },
   "repository": {
-  "type": "git",
-  "url": "git://github.com/ctsatyams/cabApi.git"
-},  
-"bugs": "http://github.com/ctsatyams/cabApi/issues",
+    "type": "git",
+    "url": "git://github.com/ctsatyams/cabApi.git"
+  },
+  "bugs": "http://github.com/ctsatyams/cabApi/issues",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   }
