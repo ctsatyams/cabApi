@@ -56,7 +56,7 @@ app.use(function (req, res, next) {
 var config = {
     user: 'satyams',
     password: 'Citiustech@1234',
-    server: 'tcp:firerock.database.windows.net,1433',
+    server: 'firerock.database.windows.net',
     database: 'cabbooking',
     dialect: "mssql",
     options: {
