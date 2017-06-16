@@ -68,7 +68,7 @@ var config = {
     // }
 };
 app.get("/booking", function (req, res) {
-    console.log(req.query);
+ 
     sql.connect(config, function (err) {
 
         if (err) console.log(err);
@@ -92,7 +92,7 @@ app.get("/booking", function (req, res) {
     });
 });
 app.get("/getAllBooking", function (req, res) {
-    console.log(req.query);
+ 
     sql.connect(config, function (err) {
 
         if (err) console.log(err);
@@ -112,8 +112,8 @@ app.get("/getAllBooking", function (req, res) {
     });
 });
 app.get("/getDetailById", function (req, res) {
-     console.log(req.query)
-  console.log(req.query.id)
+
+
     sql.connect(config, function (err) {
 
         if (err) console.log(err);
@@ -132,7 +132,7 @@ app.get("/getDetailById", function (req, res) {
     });
 });
 app.post("/booking", function (req, res) {
-    console.log(req.body.id);
+  
     // connect to your database
     sql.connect(config, function (err) {
         // console.log(err);
@@ -160,7 +160,7 @@ app.post("/booking", function (req, res) {
     });
 });
 app.put("/booking", function (req, res) {
-    console.log(req.body);
+
     // connect to your database
     sql.connect(config, function (err) {
         // console.log(err);
@@ -185,12 +185,14 @@ app.put("/booking", function (req, res) {
     });
 });
 app.get("/bookingList", function (req, res) {
+    console.log(req.query.ctid)
     sql.connect(config, function (err) {
 
         if (err) console.log(err);
 
         var request = new sql.Request();
         request.input('Action', sql.VarChar, 'BookingList')
+        request.input('CtID', sql.VarChar, req.query.ctid)
             .execute("USP_CabBooking").then(function (recordSet) {
                 res.send(recordSet);
                 sql.close()
