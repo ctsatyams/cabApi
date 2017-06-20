@@ -131,6 +131,34 @@ app.get("/getDetailById", function (req, res) {
 
     });
 });
+app.post("/addDriver", function (req, res) {
+   console.log(req.body);
+    // connect to your database
+    sql.connect(config, function (err) {
+        // console.log(err);
+
+        if (err) {
+            console.log(err)
+            sql.close()
+        };
+
+        var request = new sql.Request();
+        request.input('Action', sql.VarChar, 'InsertDriver')
+        request.input('CABID', sql.Int, req.body.id)
+        request.input('DriverName', sql.VarChar, req.body.driverName)
+        request.input('MobileNo', sql.VarChar, req.body.mobileNo)
+        request.input('VehicleNo', sql.VarChar, req.body.vehicleNo)
+        
+            .execute("USP_CabBooking").then(function (recordSet) {
+                res.send(recordSet);
+                sql.close()
+            }).catch(function (err) {
+                console.log(err);
+                sql.close()
+            });
+
+    });
+});
 app.post("/booking", function (req, res) {
   
     // connect to your database
